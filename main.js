@@ -2,11 +2,16 @@
 
 
 
-
-function showImage() {
-    var imageElement = document.getElementById('myImage');
+function showImage(image) {
+    var imageElement = document.getElementById(image);
     imageElement.classList.remove('hidden');
 }
+
+function hideImage(image) {
+    var imageElement = document.getElementById(image);
+    imageElement.classList.add('hidden');
+}
+
 
 
 function testOutput()
@@ -14,33 +19,20 @@ function testOutput()
     console.log("testmebaby");
 }
 
-function checkWebsiteStatus(url, callback) 
+function checkWebsiteStatus(url) //doesnt work, CORS errors
 {
-    fetch(url, {
-        method: 'GET',
-        mode: 'no-cors',
-        cache: 'no-cache',
-        credentials: 'same-origin',
-        headers: {
-            'Content-Type': 'text/plain'
-        },
-        redirect: 'follow',
-        referrerPolicy: 'no-referrer'
-    })
-    .then(response => {
-        if (response.status === 200) {
-            callback(true);
-        } else {
-            callback(false);
-        }
-    })
-    .catch(() => {
-        console.log("error.");
-        callback(false);
-    });
+
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = function() {
+            console.log('Website is online.');
+        };
+        img.onerror = function() {
+            console.log('Website is offline.');
+        };
+        img.src = url;
 }
 
 // Example usage:
-const websiteUrl = 'https://pfsense.arnold-of.de:10443';
-checkWebsiteStatus(websiteUrl, (isOnline) => {  if (isOnline) {console.log('Website is online.');} else {console.log('Website is offline.');}});
-console.log("imhere");
+
+
