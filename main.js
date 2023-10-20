@@ -1,1 +1,4 @@
-test
+function testOutput()
+{
+    console.log("testmebaby");
+}
