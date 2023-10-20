@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <script src="main.js"></script>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Hidden Image</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
 <body>
-<p id="wiederholungen">
-    Hier ist eine For-Schleife:
+    <h1>Show Hidden Image</h1>
+    <img id="myImage" src="image.jpg" alt="Online Status" class="hidden">
 
-</p>
+    <button onclick="showImage()">Show Image</button>
 
-<p id="Gluebirne">
-    Licht ist Aus
-</p>
-<button id="lichtButton" onclick="testOutput()">
-Licht anmachen
-</button>
-
-<input id="inp">
-<p id="listen">
-    hier ist deine Liste:
-</p>
+    <script src="main.js">        
+    </script>
 </body>
-
 </html>
