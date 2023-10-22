@@ -4,20 +4,35 @@
 
 function showImage(image) {
     var imageElement = document.getElementById(image);
+    console.log("show image: " + image);
     imageElement.classList.remove('hidden');
 }
 
 function hideImage(image) {
     var imageElement = document.getElementById(image);
+    console.log("hide image: " + image);
     imageElement.classList.add('hidden');
 }
 
-
-
-function testOutput()
-{
-    console.log("testmebaby");
+function showButton() {
+    showImage("spongebob");
+    var oldButton = document.querySelector("button");
+    var newButton = document.createElement("button");
+    newButton.innerHTML = "Hide the bob";
+    newButton.addEventListener("click", hideButton);
+    oldButton.parentNode.replaceChild(newButton, oldButton);
 }
+
+function hideButton() {
+    hideImage("spongebob");
+    var oldButton = document.querySelector("button");
+    var newButton = document.createElement("button");
+    newButton.innerHTML = "Show the bob";
+    newButton.addEventListener("click", showButton);
+    oldButton.parentNode.replaceChild(newButton, oldButton);
+}
+
+
 
 function checkWebsiteStatus(url) //doesnt work, CORS errors
 {
