@@ -23,8 +23,19 @@
     <button onclick="showButton()">Show the bob</button>
     <script src="main.js" type="text/javascript"></script>  
     <script src="magictrick.js" type="text/javascript"></script> 
+    <form>
+        <label for="fname">Your weight (in kg):</label><br>
+        <input type="text" id="weightInput" name="weightInput"><br><br>
+      
+        <label for="lname">Your height (in m):</label><br>
+        <input type="text" id="heightInput" name="heightInput"><br><br>
+      
+        <input type="button" value="Submit" onclick="getBMI()">
+    </form>
+    
+    
     <div>
-        <button onclick="getBMI()">Whats your BMI?</button>
+        <p id="bmiResult"></p>
     </div>
 </body>
 </html>
