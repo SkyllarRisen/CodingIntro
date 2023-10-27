@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me</title>
+    <style>
+        table, th, td {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border-radius: 4px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=button] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=button]:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            align-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table id="dataTable" class="mytable1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Alter</th>
+                    <th>Stadt</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <form>
+            <label for="Name">Name:</label><br>
+            <input type="text" id="Name" name="Name"><br><br>
+        
+            <label for="Alter">Alter:</label><br>
+            <input type="text" id="Alter" name="Alter"><br><br>
+
+            <label for="Stadt">Stadt:</label><br>
+            <input type="text" id="Stadt" name="Stadt"><br><br>
+        
+            <input type="button" value="Submit" onclick="fillTable()">
+        </form>
+    </div>
+
+
+
+
+
+
+
+    <script src="aboutme.js"></script>
+</body>
+</html>
