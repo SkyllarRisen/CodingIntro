@@ -1,3 +1,6 @@
+const prompt = require("prompt-sync")();
+
+
 function priceFuelTotal(priceFuel, liters)
 {
     return priceFuel * liters;
@@ -46,8 +49,13 @@ function floatSurprise()
 }
 
 
-let liters = 20, priceFuel= 1.8, salesTax = 0.19;
-let length=4, height=12;
+
+let liters = prompt("Enter liters: ");
+let priceFuel = prompt("Enter fuel price: ");
+let salesTax = prompt("Enter sales tax in decimals: ");
+let length = prompt("Enter length of pryramid: ");
+let height = prompt("Enter height of pyramid: ");
+let N = prompt("Enter N: ");
 
 
 console.log(`${liters} l fuel at ${priceFuel} Euros per liter costs ${priceFuelTotal(priceFuel, liters).toFixed(2)} Euros`);
@@ -58,6 +66,6 @@ console.log(`Volumen Pyramide ${length}, ${height} in m^3: ` + convertElleToM(vo
 console.log(`Volumen Pyramide ${length}, ${height} in Scheffel: ` + convertMtoScheffel(convertElleToM(volumePyramid(length, height))).toFixed(2));
 console.log(`Anzahl Steinblöcke: `+ amountBlocks(volumePyramid(length, height)));
 
-numberGSDS(473);
+numberGSDS(N);
 
 floatSurprise();
