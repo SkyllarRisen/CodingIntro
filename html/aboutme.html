@@ -114,6 +114,20 @@
             table, tr, td {
                 display: block;
             }
+
+            td {
+                border: none;
+                position: relative;
+            }
+            
+            td:before {
+                position: absolute;
+                top: 6px;
+                left: 6px;
+                content: attr(data-label);
+                font-weight: bold;
+            }
+
         }
 
 
