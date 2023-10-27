@@ -9,7 +9,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: rgb(226, 0, 116); /* Set the desired background color */
+            background-color: #f2f2f2; /* Set the desired background color */
         }
 
         .hidden {
@@ -24,21 +24,20 @@
             width: 100%;
             border-radius: 0px;
             margin-top: 0px;
+            box-shadow: 0 -4px 10px 0px gray;
         }
 
         .navbar a {
             float: left;
             display: block;
-            color: rgb(226, 0, 116);
+            color: black;
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
         }
 
         .navbar a:hover {
-            background-color: rgb(226, 0, 116);
-            color: #f2f2f2;
-            border-radius: 4px;
+            color: rgb(226, 0, 116);
         }
 
         div {
@@ -52,6 +51,7 @@
             padding: 20px;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 -4px 10px 0px gray;
         }
 
         h1 {
@@ -70,6 +70,11 @@
             color: #f2f2f2;
         }
 
+        @media screen and (max-width: 600px) {
+            div {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
