@@ -184,12 +184,16 @@
 
         function scrollFunction() {
             var navbar = document.querySelector('.navbar');
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-                navbar.style.padding = "0 20px"; /* Change the background color when scrolled */
-            } else {
-                navbar.style.padding = "20px"; /* Revert back to the original background color */
+            
+            if(window.screen.width > 512)
+            {   
+                if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                    navbar.style.padding = "0 20px"; /* Change the background color when scrolled */
+                } else {
+                    navbar.style.padding = "20px"; /* Revert back to the original background color */
+                }
             }
         }
-    </script>
+    </script> 
 </body>
 </html>
