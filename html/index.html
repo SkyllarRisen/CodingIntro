@@ -26,6 +26,7 @@
             border-radius: 0px;
             margin-top: 0px;
             box-shadow: 0 -4px 10px 0px gray;
+            transition: padding 0.3s;
         }
 
         .navbar a {
@@ -96,7 +97,19 @@
     </div>
 
     <script src="main.js" type="text/javascript"></script>  
-    <script src="magictrick.js" type="text/javascript"></script> 
+    <script src="magictrick.js" type="text/javascript"></script>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            var navbar = document.querySelector('.navbar');
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                navbar.style.padding = "0 20px"; /* Change the background color when scrolled */
+            } else {
+                navbar.style.padding = "20px"; /* Revert back to the original background color */
+            }
+        }
+    </script> 
     
 </body>
 </html>
