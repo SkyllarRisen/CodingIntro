@@ -16,10 +16,9 @@
         div {
             width: 20%;
             min-width: 300px;
-            margin-top: 100px;
             margin-left: auto;
             margin-right: auto;
-            box-shadow: 0 -4px 10px 0px gray;
+            
             border-radius: 5px;
             background-color: #f2f2f2;
             padding: 20px;
@@ -28,12 +27,21 @@
             justify-content: center;
         }
 
+        .paper {
+            margin-top: 300px;
+            min-width: none;
+            max-width: 1440px;
+            width: 75%;
+            box-shadow: 0 -4px 10px 0px gray;
+        }
+
         .navbar {
             overflow: hidden;
             background-color: #f2f2f2;
             position: fixed;
             top: 0;
             width: 100%;
+
             border-radius: 0px;
             margin-top: 0px;
             box-shadow: 0 -4px 10px 0px gray;
@@ -53,12 +61,22 @@
             color: rgb(226, 0, 116);
         }
 
-        @media screen and (max-width: 512px) {
-            div {
-                width: 90%;
-                min-width: 0px;
-                box-shadow: 0 0px 0px 0px gray;
+        @media screen and (max-width: 640px) {
+            .paper {
+                
+                width: 480px;
+                min-width: 320px;
+                border-radius: 5px;
+                box-shadow: 0 -4px 10px 0px gray;
+            }
+        }
+        @media screen and (max-width: 540px) {
+            .paper {
+                
+                width: 95%;
+                min-width: 320px;
                 border-radius: 0px;
+                box-shadow: 0 0px 0px 0px gray;
             }
         }
 

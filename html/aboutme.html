@@ -10,7 +10,7 @@
             margin: 0;
             font-family: Arial, sans-serif;
             height: 100vh;
-            background-color: #f2f2f2; /* Set the desired background color */
+            background-color: rgb(226, 0, 116); /* Set the desired background color */
         }
         table, th, td {
             text-align: center;        
@@ -77,10 +77,9 @@
         div {
             width: 20%;
             min-width: 300px;
-            margin-top: 100px;
             margin-left: auto;
             margin-right: auto;
-            box-shadow: 0 -4px 10px 0px gray;
+            
             border-radius: 5px;
             background-color: #f2f2f2;
             padding: 20px;
@@ -89,12 +88,21 @@
             justify-content: center;
         }
 
+        .paper {
+            margin-top: 300px;
+            min-width: none;
+            max-width: 1440px;
+            width: 75%;
+            box-shadow: 0 -4px 10px 0px gray;
+        }
+
         .navbar {
             overflow: hidden;
             background-color: #f2f2f2;
             position: fixed;
             top: 0;
             width: 100%;
+
             border-radius: 0px;
             margin-top: 0px;
             box-shadow: 0 -4px 10px 0px gray;
@@ -114,12 +122,22 @@
             color: rgb(226, 0, 116);
         }
 
-        @media screen and (max-width: 512px) {
-            div {
-                width: 90%;
-                min-width: 0px;
-                box-shadow: 0 0px 0px 0px gray;
+        @media screen and (max-width: 640px) {
+            .paper {
+                
+                width: 480px;
+                min-width: 320px;
+                border-radius: 5px;
+                box-shadow: 0 -4px 10px 0px gray;
+            }
+        }
+        @media screen and (max-width: 540px) {
+            .paper {
+                
+                width: 95%;
+                min-width: 320px;
                 border-radius: 0px;
+                box-shadow: 0 0px 0px 0px gray;
             }
         }
 
@@ -135,34 +153,37 @@
         <a href="aboutme.html">aboutme</a>
     </div>
 
-    <div>
-        <table id="dataTable" class="mytable1">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Alter</th>
-                    <th>Stadt</th>
-                </tr>
-            </thead>
-            <tbody>
 
-            </tbody>
-        </table>
 
-        <form>
-            <label for="Name">Name:</label><br>
-            <input type="text" id="Name" name="Name"><br><br>
-        
-            <label for="Alter">Alter:</label><br>
-            <input type="text" id="Alter" name="Alter"><br><br>
+    <div class="paper">
+        <div>
+            <table id="dataTable" class="mytable1">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Alter</th>
+                        <th>Stadt</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-            <label for="Stadt">Stadt:</label><br>
-            <input type="text" id="Stadt" name="Stadt"><br><br>
-        
-            <input type="button" value="Submit" onclick="fillTable()">
-        </form>
+                </tbody>
+            </table>
+
+            <form>
+                <label for="Name">Name:</label><br>
+                <input type="text" id="Name" name="Name"><br><br>
+            
+                <label for="Alter">Alter:</label><br>
+                <input type="text" id="Alter" name="Alter"><br><br>
+
+                <label for="Stadt">Stadt:</label><br>
+                <input type="text" id="Stadt" name="Stadt"><br><br>
+            
+                <input type="button" value="Submit" onclick="fillTable()">
+            </form>
+        </div>
     </div>
-
     <script src="aboutme.js"></script>
     <script>
         window.onscroll = function() {scrollFunction()};

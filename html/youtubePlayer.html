@@ -10,13 +10,12 @@
             margin: 0;
             font-family: Arial, sans-serif;
             height: 100vh;
-            background-color: #f2f2f2; /* Set the desired background color */
+            background-color: rgb(226, 0, 116); /* Set the desired background color */
         }
 
         div {
             width: 80%;
             min-width: 640;
-            margin-top: 100px;
             margin-left: auto;
             margin-right: auto;
             box-shadow: 0 -4px 10px 0px gray;
@@ -28,12 +27,21 @@
             justify-content: center;
         }
 
+        .paper {
+            margin-top: 300px;
+            min-width: none;
+            max-width: 1440px;
+            width: 75%;
+            box-shadow: 0 -4px 10px 0px gray;
+        }
+
         .navbar {
             overflow: hidden;
             background-color: #f2f2f2;
             position: fixed;
             top: 0;
             width: 100%;
+
             border-radius: 0px;
             margin-top: 0px;
             box-shadow: 0 -4px 10px 0px gray;
@@ -53,12 +61,22 @@
             color: rgb(226, 0, 116);
         }
 
-        @media screen and (max-width: 512px) {
-            div {
-                width: 90%;
-                min-width: 0px;
-                box-shadow: 0 0px 0px 0px gray;
+        @media screen and (max-width: 640px) {
+            .paper {
+                
+                width: 480px;
+                min-width: 320px;
+                border-radius: 5px;
+                box-shadow: 0 -4px 10px 0px gray;
+            }
+        }
+        @media screen and (max-width: 540px) {
+            .paper {
+                
+                width: 95%;
+                min-width: 320px;
                 border-radius: 0px;
+                box-shadow: 0 0px 0px 0px gray;
             }
         }
 
@@ -76,7 +94,7 @@
     </div>
 
     
-    <div style="padding-right: 30px;">
+    <div class="paper">
         <div id="youtubePlayer" ></div>
     </div>
     
@@ -85,9 +103,10 @@
 
         function onYouTubeIframeAPIReady()
         {
+            
             player = new YT.Player('youtubePlayer', {
-                height: window.innerHeight * 0.8,
-                width: window.innerWidth * 0.8,
+                height: window.innerHeight * 0.75,
+                width: Math.min(window.innerWidth * 0.75, 1440),
                 videoId: 'IDtjzLzs7V8',
                 playerVars: {
                     'rel': 0,
@@ -108,12 +127,12 @@
 
         window.onresize = function() 
         {
-            player.setSize(window.innerWidth * 0.8, window.innerHeight * 0.8);
+            player.setSize(Math.min(window.innerWidth * 0.75, 1440), window.innerHeight * 0.75);
         };
 
         window.addEventListener("orientationchange", function() 
         {
-            player.setSize(window.innerWidth * 0.8, window.innerHeight * 0.8);
+            player.setSize(Math.min(window.innerWidth * 0.75, 1440), window.innerHeight * 0.75);
         });
 
     </script>
