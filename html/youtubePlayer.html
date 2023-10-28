@@ -14,8 +14,8 @@
         }
 
         div {
-            width: 20%;
-            min-width: 300px;
+            width: 80%;
+            min-width: 640;
             margin-top: 100px;
             margin-left: auto;
             margin-right: auto;
@@ -63,6 +63,8 @@
         }
 
     </style>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 
 <body>
@@ -73,11 +75,36 @@
         <a href="aboutme.html">aboutme</a>
     </div>
 
-    <div>
-        
+    
+    <div style="padding-right: 30px;">
+        <div id="youtubePlayer" ></div>
     </div>
+    
+    <script>
+        let player;
 
-    <script src="template.js"></script>
+        function onYouTubeIframeAPIReady()
+        {
+            player = new YT.Player('youtubePlayer', {
+                height: window.innerHeight * 0.8,
+                width: window.innerWidth * 0.8,
+                videoId: 'IDtjzLzs7V8',
+                playerVars: {
+                    'rel': 0,
+                    'autoplay': 1,
+                    'mute': 1,
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                },
+            });
+        }
+
+        function onPlayerReady(event)
+        {
+
+        }
+    </script>
     <script>
         window.onscroll = function() {scrollFunction()};
 
@@ -93,6 +120,17 @@
                 }
             }
         }
+    </script>
+    <script>
+        function loadYouTubeAPI() 
+        {
+            const tag = document.createElement('script');
+            tag.src = 'https://www.youtube.com/iframe_api';
+            const firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        }
+
+        loadYouTubeAPI();
     </script> 
 </body>
 </html>
