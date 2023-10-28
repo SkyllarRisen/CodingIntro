@@ -93,6 +93,7 @@
                     'rel': 0,
                     'autoplay': 1,
                     'mute': 1,
+                    'start': 0,
                 },
                 events: {
                     'onReady': onPlayerReady,
@@ -104,6 +105,17 @@
         {
 
         }
+
+        window.onresize = function() 
+        {
+            player.setSize(window.innerWidth * 0.8, window.innerHeight * 0.6);
+        };
+
+        window.addEventListener("orientationchange", function() 
+        {
+            player.setSize(window.innerWidth * 0.8, window.innerHeight * 0.6);
+        });
+
     </script>
     <script>
         window.onscroll = function() {scrollFunction()};
