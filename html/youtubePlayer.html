@@ -18,7 +18,7 @@
             min-width: 640;
             margin-left: auto;
             margin-right: auto;
-            box-shadow: 0 -4px 10px 0px gray;
+
             border-radius: 5px;
             background-color: #f2f2f2;
             padding: 20px;
@@ -37,15 +37,29 @@
 
         .navbar {
             overflow: hidden;
+            display: flex;
             background-color: #f2f2f2;
             position: fixed;
             top: 0;
             width: 100%;
-
+            justify-content: space-between;
             border-radius: 0px;
             margin-top: 0px;
             box-shadow: 0 -4px 10px 0px gray;
             transition: padding 0.3s;
+        }
+
+        .leftnav {
+            width: 400px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .rightnav {
+            width: 100px;
+            min-width: 0;
+            margin: 0;
+            padding: 0;
         }
 
         .navbar a {
@@ -88,9 +102,14 @@
 <body>
 
     <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="youtubePlayer.html">Youtube Player</a>
-        <a href="aboutme.html">aboutme</a>
+        <div class = "leftnav">
+            <a href="index.html">Home</a>
+            <a href="youtubePlayer.html">Youtube Player</a>
+            <a href="aboutme.html">aboutme</a>
+        </div>
+        <div class="rightnav">
+            <a href="template.html">Login</a>
+        </div>
     </div>
 
     
