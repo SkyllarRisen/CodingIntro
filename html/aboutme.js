@@ -1,9 +1,7 @@
 
-
+//populate member list with default values
 function initTable()
 {
-    const dataTable = document.getElementById("dataTable").getElementsByTagName('tbody')[0];
-
 
     const fixedData = [
         {
@@ -13,27 +11,13 @@ function initTable()
         }
     ];
 
-    fixedData.forEach(function (datensatz) {
-        const row = dataTable.insertRow();
-        const nameCell = row.insertCell(0);
-        const ageCell = row.insertCell(1);
-        const cityCell = row.insertCell(2);
-
-        row.onclick = function() {
-            showData(datensatz.Name, datensatz.Alter, datensatz.Stadt);
-        };
-    
-        nameCell.innerHTML = datensatz.Name;
-        ageCell.innerHTML = datensatz.Alter;
-        cityCell.innerHTML = datensatz.Stadt;
-    });
+    addMember(fixedData);
 
 }
 
+//add member by reading input form on submit
 function fillTable()
 {
-
-    const dataTable = document.getElementById("dataTable").getElementsByTagName('tbody')[0];
 
     const data = [
         {
@@ -43,31 +27,40 @@ function fillTable()
         }
     ];
 
+    addMember(data);
+
+}
+
+//push member to member list
+function addMember(data)
+{
+    //get table handle to add row
+    const dataTable = document.getElementById("dataTable").getElementsByTagName('tbody')[0];
+
+    //forEach {} in data, create row
     data.forEach(function (datensatz) {
+
         const row = dataTable.insertRow();
         const nameCell = row.insertCell(0);
         const ageCell = row.insertCell(1);
         const cityCell = row.insertCell(2);
 
+        //add onclick functionality
         row.onclick = function() {
             showData(datensatz.Name, datensatz.Alter, datensatz.Stadt);
         };
         
-    
+        //fill cell with actual data
         nameCell.innerHTML = datensatz.Name;
         ageCell.innerHTML = datensatz.Alter;
         cityCell.innerHTML = datensatz.Stadt;
     });
-
 }
-
-
-
     
     
 
 
-
+// show additional list data on click
 function showData(Name, Alter, Stadt) {
   
     const insert = document.getElementById("steckbrief");
@@ -76,5 +69,6 @@ function showData(Name, Alter, Stadt) {
 
 }
 
+//calls initTable to populate member list with default values
 initTable();
-addEventListener();
+
