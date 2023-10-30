@@ -19,6 +19,10 @@ div {
     justify-content: center;
 }
 
+.hidden {
+    display: none;
+}
+
 .paper {
     margin-top: 300px;
     min-width: none;
