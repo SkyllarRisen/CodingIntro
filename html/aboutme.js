@@ -47,7 +47,7 @@ function addMember(data)
 
         //add onclick functionality
         row.onclick = function() {
-            showData(datensatz.Name, datensatz.Alter, datensatz.Stadt);
+            showData(datensatz);
         };
         
         //fill cell with actual data
@@ -61,11 +61,21 @@ function addMember(data)
 
 
 // show additional list data on click
-function showData(Name, Alter, Stadt) {
+function showData(data) {
   
-    const insert = document.getElementById("steckbrief");
-    insert.innerHTML = `<ul><li>Name: ${Name}</li><li>Alter: ${Alter}</li><li>Stadt: ${Stadt}</li></ul>`;
+    const container = document.getElementById("steckbrief");
+    container.innerHTML = '<ul class="column"><li>Name:</li><li>Alter:</li><li>Stadt:</li></ul> <ul class="column" id="column2"><ul>';
+    var uList = document.getElementById("column2");
+    const newCells = [document.createElement("li"), document.createElement("li"), document.createElement("li")];
+    newCells[0].appendChild(document.createTextNode(data.Name));
+    newCells[1].appendChild(document.createTextNode(data.Alter));
+    newCells[2].appendChild(document.createTextNode(data.Stadt));
 
+    newCells.forEach(function (cell) {
+        uList.append(cell);
+    });
+    document.getElementById("steckbrief").style.height = "250px";
+    
 
 }
 
