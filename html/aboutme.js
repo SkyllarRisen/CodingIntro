@@ -74,8 +74,24 @@ function showData(data) {
     newCells.forEach(function (cell) {
         uList.append(cell);
     });
+
+    //extend content box and display close button
     document.getElementById("steckbrief").style.height = "250px";
+    document.getElementById("closeButton").classList.remove("hidden");
     
+}
+
+
+//close additional list on button click
+function closeData() {
+
+    //delete everything in container
+    const container = document.getElementById("steckbrief");
+    container.innerHTML = "";
+
+    //shrink content box and hide close button
+    container.style.height = "0px";
+    document.getElementById("closeButton").classList.add("hidden");
 
 }
 

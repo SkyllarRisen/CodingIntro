@@ -9,7 +9,10 @@
     <!-- make it look pretty-->
     <style>
 
+        .hidden {
+            display: none;
         
+        }
 
         .column {
             list-style-type: none;
@@ -150,8 +153,9 @@
 
         <!-- placeholder container to push html code into -->
         <div id = "steckbrief" style="width: 80%;"></div>
-
+        <input type="button" value="Close" onclick="closeData()" style="width: 20%;" class="hidden" id="closeButton">
     </div>
+    
 
     <script src="aboutme.js"></script>
     <script src="template.js"></script> 
