@@ -5,9 +5,9 @@ function initTable()
 
     const fixedData = [
         {
-            Name: "Philipp Arnold", 
-            Alter: "29",
-            Stadt: "Offenbach am Main"
+            Name: "blabla", 
+            Alter: "blubb",
+            Stadt: "blibb"
         }
     ];
 
