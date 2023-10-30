@@ -8,8 +8,8 @@
     <style>
 
         .youtubePlayer {
-            width: 80%;
-            min-width: 640;
+            width: 75%;
+            min-width: 620;
         }
 
     </style>
@@ -31,7 +31,7 @@
     </div>
 
     
-    <div class="paper">
+    <div class="paper" id="yt1">
         <div id="youtubePlayer" ></div>
     </div>
     
@@ -40,10 +40,11 @@
 
         function onYouTubeIframeAPIReady()
         {
-            
+            const paper = document.getElementById("yt1").getBoundingClientRect();
+
             player = new YT.Player('youtubePlayer', {
                 height: window.innerHeight * 0.75,
-                width: Math.min(window.innerWidth * 0.75, 1440),
+                width: paper.width-40,
                 videoId: 'IDtjzLzs7V8',
                 playerVars: {
                     'rel': 0,
@@ -64,32 +65,16 @@
 
         window.onresize = function() 
         {
-            player.setSize(Math.min(window.innerWidth * 0.75, 1440), window.innerHeight * 0.75);
+            const paper = document.getElementById("yt1").getBoundingClientRect();
+            player.setSize(paper.width - 40, window.innerHeight * 0.75);
         };
 
         window.addEventListener("orientationchange", function() 
         {
-            player.setSize(Math.min(window.innerWidth * 0.75, 1440), window.innerHeight * 0.75);
+            const paper = document.getElementById("yt1").getBoundingClientRect();
+            player.setSize(paper.width - 40, window.innerHeight * 0.75);
         });
 
-    </script>
-    <script>
-        window.onscroll = function() {scrollFunction()};
-
-        function scrollFunction() {
-            var navbar = document.querySelector('.navbar');
-            
-            if(window.screen.width > 512)
-            {   
-                if (document.documentElement.scrollTop > 30) {
-                    navbar.style.padding = "0 20px"; /* Change the background color when scrolled */
-                } else {
-                    navbar.style.padding = "20px"; /* Revert back to the original background color */
-                }
-            }
-        }
-    </script>
-    <script>
         function loadYouTubeAPI() 
         {
             const tag = document.createElement('script');
@@ -99,6 +84,8 @@
         }
 
         loadYouTubeAPI();
-    </script> 
+    </script>
+ 
+    <script src="template.js"></script> 
 </body>
 </html>
