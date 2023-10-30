@@ -18,6 +18,10 @@ function initTable()
         const nameCell = row.insertCell(0);
         const ageCell = row.insertCell(1);
         const cityCell = row.insertCell(2);
+
+        row.onclick = function() {
+            showData(datensatz.Name, datensatz.Alter, datensatz.Stadt);
+        };
     
         nameCell.innerHTML = datensatz.Name;
         ageCell.innerHTML = datensatz.Alter;
@@ -25,8 +29,6 @@ function initTable()
     });
 
 }
-
-initTable();
 
 function fillTable()
 {
@@ -46,6 +48,11 @@ function fillTable()
         const nameCell = row.insertCell(0);
         const ageCell = row.insertCell(1);
         const cityCell = row.insertCell(2);
+
+        row.onclick = function() {
+            showData(datensatz.Name, datensatz.Alter, datensatz.Stadt);
+        };
+        
     
         nameCell.innerHTML = datensatz.Name;
         ageCell.innerHTML = datensatz.Alter;
@@ -54,3 +61,20 @@ function fillTable()
 
 }
 
+
+
+    
+    
+
+
+
+function showData(Name, Alter, Stadt) {
+  
+    const insert = document.getElementById("steckbrief");
+    insert.innerHTML = `<ul><li>Name: ${Name}</li><li>Alter: ${Alter}</li><li>Stadt: ${Stadt}</li></ul>`;
+
+
+}
+
+initTable();
+addEventListener();
