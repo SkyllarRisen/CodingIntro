@@ -115,17 +115,29 @@
         {
             let input = document.getElementById("YTUrl").value;
 
-            console.log(input);
-
-            if(input.includes('youtube.com')) {
+            try {
+                if(input.includes('youtube.com')) {
                 
-                
-                input = input.slice(32,45);
-            }
+                    let i = input.indexOf('watch?v=');
+                    if(i == -1) {
+                        throw "Invalid URL";
+                    }
+                    input = input.slice(i+8,i+20);
+               }
+               console.log(input);
+               console.log(input.length);
+               if(input.length != 11) {
+                throw "Invalid YouTube Video ID";
+               }
 
-            console.log(input);
+            
 
             document.getElementById("youtubePlayer").src = 'https://www.youtube.com/embed/'+ input +'?rel=0&amp;autoplay';
+            } catch (error)
+            {
+                console.error("Error: ", error);
+                alert(error);
+            }
         }
 
         window.onresize = function() 
