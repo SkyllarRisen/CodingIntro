@@ -64,7 +64,7 @@ function addMember(data)
 function showData(data) {
   
     const container = document.getElementById("steckbrief");
-    container.innerHTML = '<ul class="column"><li>Name:</li><li>Alter:</li><li>Stadt:</li></ul> <ul class="column" id="column2"><ul>';
+    container.innerHTML = '<ul class="column"><li>Name:</li><li>Alter:</li><li>Stadt:</li></ul> <ul class="column" id="column2"></ul>';
     var uList = document.getElementById("column2");
     const newCells = [document.createElement("li"), document.createElement("li"), document.createElement("li")];
     newCells[0].appendChild(document.createTextNode(data.Name));
