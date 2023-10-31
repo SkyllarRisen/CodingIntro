@@ -3,34 +3,58 @@ async function loadJson()
 
     let jsonData;
 
-try
-{
-    const response = await fetch('https://uniapi.provadis.de/getactualrooms');
-
-    if(!response.ok)
+    try
     {
-        throw new Error('Cant load data.');
-    }
+        const response = await fetch('https://uniapi.provadis.de/getactualrooms');
 
-    jsonData = await response.json();
-}
-catch(error)
-{
-    console.error('Error:', error);
-}
+        if(!response.ok)
+        {
+            throw new Error('Cant load data.');
+        }
+
+        jsonData = await response.json();
+    }
+    catch(error)
+    {
+        console.error('Error:', error);
+    }
 
     return jsonData;
 
 }
 
+function createTable()
+{
+    let data = ["Time","Title","Building","Room Number","Instructor"];
+
+    let dataTable = document.createElement("table");
+    dataTable.setAttribute("id", "dataTable");
+    let header = dataTable.createTHead();
+    let headerRow = header.insertRow();
+    data.forEach(function (label) {
+        let th = document.createElement("th");
+        let text = document.createTextNode(label);
+        th.appendChild(text);
+        headerRow.appendChild(th);
+    });
+
+    let body = document.createElement("tbody");
+    dataTable.appendChild(body);
+    document.getElementById("contentZone").appendChild(dataTable);
+
+    
+}
 
 async function displayJson()
 {
     const result = await loadJson();
+    createTable();
     addMember(result);
 }
 
 displayJson();
+
+
 
 //push member to member list
 function addMember(data)

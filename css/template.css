@@ -6,6 +6,15 @@ body {
     background-color: rgb(226, 0, 116); /* Set the desired background color */
 }
 
+h1 {
+    margin-top: 150px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 60px;
+    color: #f2f2f2;
+    padding: 20px;
+}
+
 div {
     width: 25%;
     min-width: 300px;
@@ -24,7 +33,7 @@ div {
 }
 
 .paper {
-    margin-top: 300px;
+    margin-top: 50px;
     min-width: none;
     max-width: 1440px;
     width: 75%;
