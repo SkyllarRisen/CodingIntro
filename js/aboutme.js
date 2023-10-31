@@ -38,7 +38,7 @@ function addMember(data)
     const dataTable = document.getElementById("dataTable").getElementsByTagName('tbody')[0];
 
     //forEach {} in data, create row
-    data.forEach(function (datensatz) {
+    data.forEach(function (object) {
 
         const row = dataTable.insertRow();
         const nameCell = row.insertCell(0);
@@ -47,13 +47,13 @@ function addMember(data)
 
         //add onclick functionality
         row.onclick = function() {
-            showData(datensatz);
+            showData(object);
         };
         
         //fill cell with actual data
-        nameCell.innerHTML = datensatz.Name;
-        ageCell.innerHTML = datensatz.Alter;
-        cityCell.innerHTML = datensatz.Stadt;
+        nameCell.innerHTML = object.Name;
+        ageCell.innerHTML = object.Alter;
+        cityCell.innerHTML = object.Stadt;
     });
 }
     

@@ -42,11 +42,11 @@ div {
     border-radius: 0px;
     margin-top: 0px;
     box-shadow: 0 -4px 10px 0px gray;
-    transition: padding 0.3s;
+    transition: padding 0.2s;
 }
 
 .leftnav {
-    width: 400px;
+    width: 500px;
     margin: 0;
     padding: 0;
 }
