@@ -41,26 +41,23 @@ function addMember(data)
     //forEach {} in data, create row
     data.forEach(function (object) {
 
+        //skip if not relevant
         if(!object.subtitle.includes("BIN-T23-F-2")) {
            return; 
         }
         
-
+        //create table
         const row = dataTable.insertRow();
 
         const time = row.insertCell(0);
         const title = row.insertCell(1);
-        const subtitle = row.insertCell(2);
-        const building = row.insertCell(3);
-        const room = row.insertCell(4);
-        const instructor= row.insertCell(5);
+        const building = row.insertCell(2);
+        const room = row.insertCell(3);
+        const instructor= row.insertCell(4);
         
-        //fill cell with actual data
-        
+        //fill cell with actual data   
         time.innerHTML = object.start.slice(11,16) + " - " + object.end.slice(11,16);
-        //end.innerHTML = object.end;
         title.innerHTML = object.displaytitle;
-        subtitle.innerHTML = object.subtitle;
         building.innerHTML = object.buildingname;
         room.innerHTML = object.roomname + " / " + object.roomalias;
         instructor.innerHTML = object.instructorname;
