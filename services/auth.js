@@ -1,0 +1,68 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const bcrypt = require('bcrypt');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+
+const app = express();
+const sessionTimeout = 30 * 60 * 1000;
+
+// Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(
+  session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true,
+    cookie: { maxAge: sessionTimeout }
+  })
+);
+
+// Simulated user database
+const users = [];
+
+// Login route
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+  const user = users.find((user) => user.username === username);
+
+  if (!user) {
+    return res.status(401).send('User not found');
+  }
+
+  bcrypt.compare(password, user.password, (err, result) => {
+    if (result === true) {
+      req.session.user = user;
+      res.send('Login successful');
+    } else {
+      res.status(401).send('Incorrect password');
+    }
+  });
+});
+
+// Register route
+app.post('/register', (req, res) => {
+  const { username, password } = req.body;
+
+  bcrypt.hash(password, 10, (err, hash) => {
+    if (err) {
+      return res.status(500).send('Internal server error');
+    }
+    const newUser = { username, password: hash };
+    users.push(newUser);
+    res.send('User registered');
+  });
+});
+
+// Logout route
+app.get('/logout', (req, res) => {
+  req.session.destroy();
+  res.send('Logged out');
+});
+
+// Server setup
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
