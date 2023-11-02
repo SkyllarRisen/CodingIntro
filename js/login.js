@@ -17,6 +17,8 @@
         registerForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const formData = new FormData(registerForm);
+            console.log(formData.get('newUsername'));
+            console.log(formData.get('newPassword'));
             const response = await fetch('/register', {
                 method: 'POST',
                 body: formData
