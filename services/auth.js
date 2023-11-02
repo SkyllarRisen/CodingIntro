@@ -8,11 +8,11 @@ const app = express();
 const sessionTimeout = 30 * 60 * 1000;
 
 // Middleware
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(
   session({
-    secret: 'secret',
+    secret: 'secretsarebad',
     resave: true,
     saveUninitialized: true,
     cookie: { maxAge: sessionTimeout }
