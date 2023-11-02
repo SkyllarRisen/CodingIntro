@@ -21,7 +21,7 @@
             console.log(formData.get('newPassword'));
             const response = await fetch('/register', {
                 method: 'POST',
-                body: formData
+                body: {username: formData.get('newUsername'), password: formData.get('newPassword')}
             });
             const data = await response.text();
             console.log(data);
