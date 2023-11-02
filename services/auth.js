@@ -7,7 +7,6 @@ const app = express();
 const sessionTimeout = 30 * 60 * 1000;
 
 // Middleware
-app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(

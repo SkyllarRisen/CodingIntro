@@ -21,7 +21,10 @@
             console.log(formData.get('newPassword'));
             const response = await fetch('/register', {
                 method: 'POST',
-                body: formData
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
             });
             const data = await response.text();
             console.log(data);
