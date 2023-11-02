@@ -71,7 +71,7 @@ app.get('/logout', (req, res) => {
 });
 
 //protected route
-app.get('/html', (req, res) => {
+app.get('/dashboard', (req, res) => {
     if (req.session.authenticated) {
         res.send('You are logged in and can access the dashboard.');
     } else {
