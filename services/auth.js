@@ -35,7 +35,11 @@ app.post('/login', (req, res) => {
     if (result === true) {
       req.session.user = user;
       res.send('Login successful');
-    } else {
+    } else if (err) {
+        res.status(500).send('Internal server error');
+    }
+    
+    else {
       res.status(401).send('Incorrect password');
     }
   });
