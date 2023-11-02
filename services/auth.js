@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
@@ -10,8 +9,6 @@ const sessionTimeout = 30 * 60 * 1000;
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(
   session({
