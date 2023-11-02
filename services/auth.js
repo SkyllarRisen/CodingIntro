@@ -24,7 +24,8 @@ const users = [];
 
 // Login route
 app.post('/login', (req, res) => {
-  const { username, password } = req.body;
+  const username = req.body.newUsername;
+  const password = req.body.newPassword;
 
   console.log(req.body);
   console.log(username + " : " + password); 
