@@ -24,7 +24,7 @@
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ username: formData.get('newUsername'), password: formData.get('newPassword')}),
+                body: JSON.stringify({"username": formData.get('newUsername'), "password": formData.get('newPassword')}),
             });
             const data = await response.text();
             console.log(data);
