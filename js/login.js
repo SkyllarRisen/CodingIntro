@@ -16,10 +16,7 @@
 
         registerForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            console.log(registerForm);
             const formData = new FormData(registerForm);
-            console.log(formData);
-            console.log(formData.entries);
             const response = await fetch('/register', {
                 method: 'POST',
                 body: formData

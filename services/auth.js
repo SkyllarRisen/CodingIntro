@@ -48,7 +48,7 @@ app.post('/login', (req, res) => {
 // Register route
 app.post('/register', (req, res) => {
   const { username, password } = req.body;
-
+  console.log(username + " : " + password);  
   bcrypt.hash(password, 10, (err, hash) => {
     if (err) {
       return res.status(500).send('Internal server error');
