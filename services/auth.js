@@ -70,6 +70,15 @@ app.get('/logout', (req, res) => {
   res.send('Logged out');
 });
 
+//protected route
+app.get('/', (req, res) => {
+    if (req.session.authenticated) {
+        res.send('You are logged in and can access the dashboard.');
+    } else {
+        res.send('You are not logged in. Please log in first.');
+    }
+});
+
 // Server setup
 const PORT = 3000;
 app.listen(PORT, () => {
