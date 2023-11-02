@@ -9,6 +9,7 @@ const sessionTimeout = 30 * 60 * 1000;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(
   session({
