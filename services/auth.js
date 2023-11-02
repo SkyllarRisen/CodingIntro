@@ -24,30 +24,29 @@ const users = [];
 
 // Login route
 app.post('/login', (req, res) => {
-  const username = req.body.Username;
-  const password = req.body.Password;
+    const { username, password } = req.body;
 
-  console.log(req.body);
-  console.log(username + " : " + password); 
+    console.log(req.body);
+    console.log(username + " : " + password); 
 
-  const user = users.find((user) => user.username === username);
+    const user = users.find((user) => user.username === username);
 
-  if (!user) {
-    return res.status(401).send('User not found');
-  }
-
-  bcrypt.compare(password, user.password, (err, result) => {
-    if (result === true) {
-      req.session.user = user;
-      res.send('Login successful');
-    } else if (err) {
-        res.status(500).send('Internal server error');
+    if (!user) {
+        return res.status(401).send('User not found');
     }
-    
-    else {
-      res.status(401).send('Incorrect password');
-    }
-  });
+
+    bcrypt.compare(password, user.password, (err, result) => {
+        if (result === true) {
+        req.session.user = user;
+        res.send('Login successful');
+        } else if (err) {
+            res.status(500).send('Internal server error');
+        }
+        
+        else {
+        res.status(401).send('Incorrect password');
+        }
+    });
 });
 
 // Register route
