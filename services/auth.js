@@ -25,6 +25,10 @@ const users = [];
 // Login route
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
+
+  console.log(req.body);
+  console.log(username + " : " + password); 
+
   const user = users.find((user) => user.username === username);
 
   if (!user) {
