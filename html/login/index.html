@@ -3,69 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whats the secret?</title>
-    <link rel="stylesheet" type="text/css" href="../css/template.css">
+    <title>template</title>
+    <link rel="stylesheet" type="text/css" href="/css/template.css">
     <style>
 
+        div {
+            width: 300px;
+            margin-top: 100px;
 
-
-        .imagewrap {
-            width: 119px;
-            min-width: 0;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        h2 {
-            text-align: center;
-            margin-top: 0px; /* Adjust the margin-top value as needed */
-            color: black;
+        input, select {
+            width: 100%;
+            padding: 12px 20px;
+            margin-top: 8px;
+            margin-left: auto;
+            margin-right: auto;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;  
         }
 
         button {
-
-            margin-top: 0px; /* Adjust the margin-top value as needed */
             width: 100%;
-
-            border-radius: 4px;
-            margin-left: auto;
-            margin-right: auto;
             background-color: rgb(226, 0, 116);
             color: #f2f2f2;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
         }
+
+        button:hover {
+            background-color: rgb(226, 0, 146);
+        }
+
+        
 
     </style>
 </head>
+
 <body>
-    
+
     <div class="navbar">
         <div class = "leftnav">
-            <a href="../html/home.html">Home</a>
-            <a href="../html/youtubePlayer.html">Youtube Player</a>
-            <a href="../html/aboutme.html">aboutme</a>
-            <a href="../html/roomOccupancy.html">Rooms</a>
+            <a href="/html/home.html">Home</a>
+            <a href="/html/youtubePlayer.html">Youtube Player</a>
+            <a href="/html/aboutme.html">aboutme</a>
+            <a href="/html/roomOccupancy.html">Rooms</a>
         </div>
         <div class="rightnav">
-            <a href="../html/template.html" id="logoutButton">Logout</a>
+            <a href="/html/template.html" id="logoutButton">Logout</a>
         </div>
     </div>
 
-    <h1>Whats the secret?</h1>
-
-    <div class="paper">
-
-        <div class="imagewrap">
-            <img id="spongebob" src="../src/Spongebob.bmp" alt="theBob" class="hidden">
-        </div>
-        <div style="max-width: 200px; min-width: 100px;">
-            <button onclick="showButton()">Show the bob</button>
-        </div>
+    <div>
+        <form id="loginForm">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br><br>
         
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br><br>
+        
+            <button type="submit">Login</button>
+        </form>
     </div>
 
-    <script src="../js/main.js" type="text/javascript"></script>  
-    <script src="../js/magictrick.js" type="text/javascript"></script>
-    <script src="../js/template.js"></script>
-    <script src="../js/logout.js"></script> 
+    <div>
+        <form id="registerForm">
+            <label for="newUsername">New Username:</label><br>
+            <input type="text" id="newUsername" name="newUsername"><br><br>
+        
+            <label for="newPassword">Password:</label><br>
+            <input type="password" id="newPassword" name="newPassword"><br><br>
+            
+
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+
+
+
+    <script src="/js/login.js"></script>
+    <script src="/js/logout.js"></script>
+    <script src="/js/template.js"></script>
 </body>
 </html>
