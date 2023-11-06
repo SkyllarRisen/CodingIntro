@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>template</title>
+    <link rel="stylesheet" type="text/css" href="/css/template.css">
+    <style>
+
+        div {
+            width: 300px;
+            margin-top: 100px;
+
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px 20px;
+            margin-top: 8px;
+            margin-left: auto;
+            margin-right: auto;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;  
+        }
+
+        button {
+            width: 100%;
+            background-color: rgb(226, 0, 116);
+            color: #f2f2f2;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(226, 0, 146);
+        }
+
+        
+
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class = "leftnav">
+            <a href="/html/home.html">Home</a>
+            <a href="/html/youtubePlayer.html">Youtube Player</a>
+            <a href="/html/aboutme.html">aboutme</a>
+            <a href="/html/roomOccupancy.html">Rooms</a>
+        </div>
+        <div class="rightnav">
+            <a href="/html/template.html" id="logoutButton">Logout</a>
+        </div>
+    </div>
+
+    <div>
+        <form id="loginForm">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br><br>
+        
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br><br>
+        
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div>
+        <form id="registerForm">
+            <label for="newUsername">New Username:</label><br>
+            <input type="text" id="newUsername" name="newUsername"><br><br>
+        
+            <label for="newPassword">Password:</label><br>
+            <input type="password" id="newPassword" name="newPassword"><br><br>
+            
+
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+
+
+
+    <script src="/js/login.js"></script>
+    <script src="/js/logout.js"></script>
+    <script src="/js/template.js"></script>
+</body>
+</html>
