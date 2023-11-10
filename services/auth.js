@@ -43,6 +43,7 @@ app.post('/login', (req, res) => {
 
     bcrypt.compare(password, user.password, (err, result) => {
         if (result === true) {
+        console.log("Logged in: " + username + " : " + password); 
         req.session.user = user;
         res.send('Login successful');
         } else if (err) {
@@ -52,6 +53,7 @@ app.post('/login', (req, res) => {
         else {
         res.status(401).send('Incorrect password');
         }
+        console.log(user.session.authenticated);
     });
 });
 
