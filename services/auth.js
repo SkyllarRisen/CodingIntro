@@ -78,7 +78,7 @@ app.get('/logout', (req, res) => {
 });
 
 //protected route
-app.get('/home.html', (req, res) => {
+app.get('/', (req, res) => {
     if (req.session.authenticated) {
         res.sendFile( path + "/home.html");
     } else {
