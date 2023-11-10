@@ -74,11 +74,9 @@ app.get('/logout', (req, res) => {
 //protected route
 app.get('/', (req, res) => {
     if (req.session.authenticated) {
-        res.send('You are logged in and can access the dashboard.');
         console.log(__dirname);
         res.sendFile(__dirname + "/home.html");
     } else {
-        res.send('You are not logged in. Please log in first.');
         res.redirect("/login");
     }
 });
