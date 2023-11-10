@@ -24,6 +24,12 @@ app.use(
 const users = [];
 
 // Login route
+app.get('/login', (req, res) => {
+      console.log(__dirname);
+      res.sendFile(__dirname + "/home.html");
+});
+
+
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
