@@ -27,7 +27,7 @@ const users = [];
 // Login route
 app.get('/login', (req, res) => {
       console.log(__dirname);
-      res.sendFile(_path + "/login/index.html");
+      res.sendFile( path + "/login/index.html");
 });
 
 
@@ -81,8 +81,7 @@ app.get('/logout', (req, res) => {
 //protected route
 app.get('/', (req, res) => {
     if (req.session.authenticated) {
-        console.log(__dirname);
-        res.sendFile(path + "/home.html");
+        res.sendFile( path + "/home.html");
     } else {
         res.redirect("/login");
     }
