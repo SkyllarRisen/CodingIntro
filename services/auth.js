@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 
 const app = express();
+const path = require('path');
 const sessionTimeout = 30 * 60 * 1000;
 
 // Middleware
@@ -71,11 +72,14 @@ app.get('/logout', (req, res) => {
 });
 
 //protected route
-app.get('/dashboard', (req, res) => {
+app.get('/', (req, res) => {
     if (req.session.authenticated) {
         res.send('You are logged in and can access the dashboard.');
+        console.log(__dirname);
+        res.sendFile(__dirname + "/home.html");
     } else {
         res.send('You are not logged in. Please log in first.');
+        res.redirect("/login");
     }
 });
 
