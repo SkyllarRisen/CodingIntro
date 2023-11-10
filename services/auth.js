@@ -4,8 +4,9 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 
 const app = express();
-const path = require('path');
 const sessionTimeout = 30 * 60 * 1000;
+
+const path = "/var/www/CodingIntro/html";
 
 // Middleware
 app.use(express.json());
@@ -26,7 +27,7 @@ const users = [];
 // Login route
 app.get('/login', (req, res) => {
       console.log(__dirname);
-      res.sendFile(__dirname + "/home.html");
+      res.sendFile(_path + "/login/index.html");
 });
 
 
@@ -81,7 +82,7 @@ app.get('/logout', (req, res) => {
 app.get('/', (req, res) => {
     if (req.session.authenticated) {
         console.log(__dirname);
-        res.sendFile(__dirname + "/home.html");
+        res.sendFile(path + "/home.html");
     } else {
         res.redirect("/login");
     }
