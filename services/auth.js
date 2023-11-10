@@ -78,11 +78,47 @@ app.get('/logout', (req, res) => {
 //protected route
 app.get('/', (req, res) => {
     if (req.session.authenticated) {
-        res.sendFile( path + "/home.html");
+        res.redirect("/home.html");
         console.log("registered user accessed home.html");
     } else {
         res.redirect("/login");
     }
+});
+
+app.get('/home.html', (req, res) => {
+  if (req.session.authenticated) {
+      res.sendFile(path + "/home.html");
+      console.log("registered user accessed home.html");
+  } else {
+      res.redirect("/login");
+  }
+});
+
+app.get('/youtubePlayer.html', (req, res) => {
+  if (req.session.authenticated) {
+      res.sendFile(path + "/youtubePlayer.html");
+      console.log("registered user accessed youtubePlayer.html");
+  } else {
+      res.redirect("/login");
+  }
+});
+
+app.get('/aboutme.html', (req, res) => {
+  if (req.session.authenticated) {
+      res.redirect(path +"/aboutme.html");
+      console.log("registered user accessed aboutme.html");
+  } else {
+      res.redirect("/login");
+  }
+});
+
+app.get('/roomOccupancy.html', (req, res) => {
+  if (req.session.authenticated) {
+      res.redirect(path + "/roomOccupancy.html");
+      console.log("registered user accessed roomOccupancy.html");
+  } else {
+      res.redirect("/login");
+  }
 });
 
 // Server setup
