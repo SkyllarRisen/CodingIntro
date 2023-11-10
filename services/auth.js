@@ -26,7 +26,6 @@ const users = [];
 
 // Login route
 app.get('/login', (req, res) => {
-      console.log(__dirname);
       res.sendFile( path + "/login/index.html");
 });
 
@@ -79,7 +78,7 @@ app.get('/logout', (req, res) => {
 });
 
 //protected route
-app.get('/', (req, res) => {
+app.get('/home.html', (req, res) => {
     if (req.session.authenticated) {
         res.sendFile( path + "/home.html");
     } else {
