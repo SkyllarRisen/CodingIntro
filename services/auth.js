@@ -81,6 +81,7 @@ app.get('/logout', (req, res) => {
 app.get('/', (req, res) => {
     if (req.session.authenticated) {
         res.sendFile( path + "/home.html");
+        console.log("registered user accessed home.html");
     } else {
         res.redirect("/login");
     }
