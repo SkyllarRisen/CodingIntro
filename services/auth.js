@@ -33,8 +33,7 @@ app.get('/login', (req, res) => {
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
-    console.log(req.body);
-    console.log(username + " : " + password); 
+    console.log("Logged in: " + username + " : " + password); 
 
     const user = users.find((user) => user.username === username);
 
@@ -59,8 +58,7 @@ app.post('/login', (req, res) => {
 // Register route
 app.post('/register', (req, res) => {
   const { username, password } = req.body;
-  console.log(req.body);
-  console.log(username + " : " + password);  
+  console.log("Registered: " + username + " : " + password);  
   bcrypt.hash(password, 10, (err, hash) => {
     if (err) {
       return res.status(500).send('Internal server error');
