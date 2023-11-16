@@ -1,169 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Youtube Player</title>
-    <link rel="stylesheet" type="text/css" href="/css/template.css">
+    <link rel="stylesheet" type="text/css" href="/css/template.css" />
 
     <style>
+      .youtubePlayer {
+        width: 75%;
+        min-width: 620;
+      }
 
-        .youtubePlayer {
-            width: 75%;
-            min-width: 620;
-        }
+      .paper {
+        margin-top: 40px;
+      }
 
-        .paper {
-            margin-top: 40px;
-        }
+      form {
+        font-weight: bold;
+        color: black;
+      }
 
-        form {
-            font-weight: bold;
-            color: black;
-        }
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 12px 20px;
+        margin-top: 8px;
+        margin-left: auto;
+        margin-right: auto;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
 
-        input[type=text], select {
-            width: 100%;
-            padding: 12px 20px;
-            margin-top: 8px;
-            margin-left: auto;
-            margin-right: auto;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;  
-        }
+      input[type="button"] {
+        width: 100%;
+        background-color: rgb(226, 0, 116);
+        color: #f2f2f2;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
 
-        input[type=button] {
-            width: 100%;
-            background-color: rgb(226, 0, 116);
-            color: #f2f2f2;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        input[type=button]:hover {
-            background-color: rgb(226, 0, 146);
-        }
-
+      input[type="button"]:hover {
+        background-color: rgb(226, 0, 146);
+      }
     </style>
 
     <script src="https://www.youtube.com/iframe_api"></script>
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <div class="navbar">
-        <div class = "leftnav">
-            <a href="/home.html">Home</a>
-            <a href="/youtubePlayer.html">Youtube Player</a>
-            <a href="/aboutme.html">aboutme</a>
-            <a href="/roomOccupancy.html">Rooms</a>
-        </div>
-        <div class="rightnav">
-            <a href="/template.html" id="logoutButton">Logout</a>
-        </div>
+      <div class="leftnav">
+        <a href="/home.html">Home</a>
+        <a href="/youtubePlayer.html">Youtube Player</a>
+        <a href="/aboutme.html">aboutme</a>
+        <a href="/roomOccupancy.html">Rooms</a>
+      </div>
+      <div class="rightnav">
+        <a href="/template.html" id="logoutButton">Logout</a>
+      </div>
     </div>
 
-    <div style="margin-top: 120px;">
-        <form>
-            <label for="YTUrl">YTUrl:</label><br>
-            <input type="text" id="YTUrl" name="YTUrl"><br><br>
+    <div style="margin-top: 120px">
+      <form>
+        <label for="YTUrl">YTUrl:</label><br />
+        <input type="text" id="YTUrl" name="YTUrl" /><br /><br />
 
-            <input type="button" value="Submit" onclick="loadYTVideo()">
-        </form>
+        <input type="button" value="Submit" onclick="loadYTVideo()" />
+      </form>
     </div>
 
     <div class="paper" id="yt1">
-        <div id="youtubePlayer" ></div>
+      <div id="youtubePlayer"></div>
     </div>
-    
+
     <script>
+      let player;
 
-        let player;
+      function onYouTubeIframeAPIReady() {
+        const paper = document.getElementById("yt1").getBoundingClientRect();
 
-        function onYouTubeIframeAPIReady()
-        {
-            const paper = document.getElementById("yt1").getBoundingClientRect();
-
-            player = new YT.Player('youtubePlayer', {
-                height: window.innerHeight * 0.75,
-                width: paper.width-40,
-                videoId: 'IDtjzLzs7V8',
-                playerVars: {
-                    'rel': 0,
-                    'autoplay': 1,
-                    'mute': 1,
-                    'start': 0,
-                },
-                events: {
-                    'onReady': onPlayerReady,
-                },
-            });
-        }
-
-        function onPlayerReady(event)
-        {
-
-        }
-
-        function loadYTVideo()
-        {
-            let input = document.getElementById("YTUrl").value;
-
-            try {
-                if(input.includes('youtube.com')) {
-                
-                    let i = input.indexOf('watch?v=');
-                    if(i == -1) {
-                        throw "Invalid URL";
-                    }
-                    input = input.slice(i+8,i+20);
-               }
-               console.log(input);
-               console.log(input.length);
-               if(input.length != 11) {
-                throw "Invalid YouTube Video ID";
-               }
-
-            
-
-            document.getElementById("youtubePlayer").src = 'https://www.youtube.com/embed/'+ input +'?autoplay=1&rel=0';
-            } catch (error)
-            {
-                console.error("Error: ", error);
-                alert(error);
-            }
-        }
-
-        window.onresize = function() 
-        {
-            const paper = document.getElementById("yt1").getBoundingClientRect();
-            player.setSize(paper.width - 40, window.innerHeight * 0.75);
-        };
-
-        window.addEventListener("orientationchange", function() 
-        {
-            const paper = document.getElementById("yt1").getBoundingClientRect();
-            player.setSize(paper.width - 40, window.innerHeight * 0.75);
+        player = new YT.Player("youtubePlayer", {
+          height: window.innerHeight * 0.75,
+          width: paper.width - 40,
+          videoId: "IDtjzLzs7V8",
+          playerVars: {
+            rel: 0,
+            autoplay: 1,
+            mute: 1,
+            start: 0,
+          },
+          events: {
+            onReady: onPlayerReady,
+          },
         });
+      }
 
-        function loadYouTubeAPI() 
-        {
-            const tag = document.createElement('script');
-            tag.src = 'https://www.youtube.com/iframe_api';
-            const firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      function onPlayerReady(event) {}
+
+      function loadYTVideo() {
+        let input = document.getElementById("YTUrl").value;
+
+        try {
+          if (input.includes("youtube.com")) {
+            let i = input.indexOf("watch?v=");
+            if (i == -1) {
+              throw "Invalid URL";
+            }
+            input = input.slice(i + 8, i + 20);
+          }
+          console.log(input);
+          console.log(input.length);
+          if (input.length != 11) {
+            throw "Invalid YouTube Video ID";
+          }
+
+          document.getElementById("youtubePlayer").src =
+            "https://www.youtube.com/embed/" + input + "?autoplay=1&rel=0";
+        } catch (error) {
+          console.error("Error: ", error);
+          alert(error);
         }
+      }
 
-        loadYouTubeAPI();
+      window.onresize = function () {
+        const paper = document.getElementById("yt1").getBoundingClientRect();
+        player.setSize(paper.width - 40, window.innerHeight * 0.75);
+      };
+
+      window.addEventListener("orientationchange", function () {
+        const paper = document.getElementById("yt1").getBoundingClientRect();
+        player.setSize(paper.width - 40, window.innerHeight * 0.75);
+      });
+
+      function loadYouTubeAPI() {
+        const tag = document.createElement("script");
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName("script")[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      }
+
+      loadYouTubeAPI();
     </script>
- 
+
     <script src="/js/template.js"></script>
-    <script src="/js/logout.js"></script> 
-</body>
+    <script src="/js/logout.js"></script>
+  </body>
 </html>

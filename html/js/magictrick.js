@@ -1,27 +1,28 @@
-
-function calculateBMI(kg, height)
-{
-    return kg / (height*height);
+function calculateBMI(kg, height) {
+  return kg / (height * height);
 }
 
-function getBMI()
-{
+function getBMI() {
+  let kg = parseFloat(document.getElementById("weightInput").value);
+  let height = parseFloat(document.getElementById("heightInput").value);
 
-let kg = parseFloat(document.getElementById("weightInput").value);
-let height = parseFloat(document.getElementById("heightInput").value);
-
-if(isNaN(kg)|| isNaN(height))
-{
+  if (isNaN(kg) || isNaN(height)) {
     alert("Please enter valid numbers.");
-    return ;   
+    return;
+  }
+
+  document.getElementById("bmiResult").innerHTML =
+    "Wenn sie " +
+    height +
+    " m groß sind und " +
+    kg +
+    " kg wiegen, <br> dann lautet ihr BMI: <br><br>" +
+    calculateBMI(kg, height) +
+    " (auf ganze Zahl gerundet: " +
+    Math.round(calculateBMI(kg, height)) +
+    ").";
 }
 
-document.getElementById("bmiResult").innerHTML = "Wenn sie "+ height +" m groß sind und "+ kg +" kg wiegen, <br> dann lautet ihr BMI: <br><br>" + calculateBMI(kg, height) 
-    +" (auf ganze Zahl gerundet: "+ Math.round(calculateBMI(kg, height))+").";
-
-}
-
-function maxNumber(a,b,c)
-{
-    return Math.max(a, Math.max(b,c));
+function maxNumber(a, b, c) {
+  return Math.max(a, Math.max(b, c));
 }

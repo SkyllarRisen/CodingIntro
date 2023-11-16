@@ -1,71 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Whats the secret?</title>
-    <link rel="stylesheet" type="text/css" href="/css/template.css">
+    <link rel="stylesheet" type="text/css" href="/css/template.css" />
     <style>
+      .imagewrap {
+        width: 119px;
+        min-width: 0;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
+      h2 {
+        text-align: center;
+        margin-top: 0px; /* Adjust the margin-top value as needed */
+        color: black;
+      }
 
+      button {
+        margin-top: 0px; /* Adjust the margin-top value as needed */
+        width: 100%;
 
-        .imagewrap {
-            width: 119px;
-            min-width: 0;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        h2 {
-            text-align: center;
-            margin-top: 0px; /* Adjust the margin-top value as needed */
-            color: black;
-        }
-
-        button {
-
-            margin-top: 0px; /* Adjust the margin-top value as needed */
-            width: 100%;
-
-            border-radius: 4px;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: rgb(226, 0, 116);
-            color: #f2f2f2;
-        }
-
+        border-radius: 4px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgb(226, 0, 116);
+        color: #f2f2f2;
+      }
     </style>
-</head>
-<body>
-    
+  </head>
+  <body>
     <div class="navbar">
-        <div class = "leftnav">
-            <a href="/home.html">Home</a>
-            <a href="/youtubePlayer.html">Youtube Player</a>
-            <a href="/aboutme.html">aboutme</a>
-            <a href="/roomOccupancy.html">Rooms</a>
-        </div>
-        <div class="rightnav">
-            <a href="/template.html" id="logoutButton">Logout</a>
-        </div>
+      <div class="leftnav">
+        <a href="/home.html">Home</a>
+        <a href="/youtubePlayer.html">Youtube Player</a>
+        <a href="/aboutme.html">aboutme</a>
+        <a href="/roomOccupancy.html">Rooms</a>
+      </div>
+      <div class="rightnav">
+        <a href="/template.html" id="logoutButton">Logout</a>
+      </div>
     </div>
 
     <h1>Whats the secret?</h1>
 
     <div class="paper">
-
-        <div class="imagewrap">
-            <img id="spongebob" src="../src/Spongebob.bmp" alt="theBob" class="hidden">
-        </div>
-        <div style="max-width: 200px; min-width: 100px;">
-            <button onclick="showButton()">Show the bob</button>
-        </div>
-        
+      <div class="imagewrap">
+        <img
+          id="spongebob"
+          src="../src/Spongebob.bmp"
+          alt="theBob"
+          class="hidden"
+        />
+      </div>
+      <div style="max-width: 200px; min-width: 100px">
+        <button onclick="showButton()">Show the bob</button>
+      </div>
     </div>
 
-    <script src="/js/main.js" type="text/javascript"></script>  
+    <script src="/js/main.js" type="text/javascript"></script>
     <script src="/js/magictrick.js" type="text/javascript"></script>
     <script src="/js/template.js"></script>
-    <script src="/js/logout.js"></script> 
-</body>
+    <script src="/js/logout.js"></script>
+  </body>
 </html>

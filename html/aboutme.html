@@ -1,168 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About me</title>
-    <link rel="stylesheet" type="text/css" href="/css/template.css">
+    <link rel="stylesheet" type="text/css" href="/css/template.css" />
 
     <!-- make it look pretty-->
     <style>
+      .column {
+        list-style-type: none;
+        padding: 0;
+        width: 20%;
+        float: left;
+        border: 1px solid black;
 
+        border-collapse: collapse;
+      }
 
+      li {
+        text-align: center;
+        display: block;
+        height: 40px;
+        padding: 8px;
+        padding-top: 30px;
+        background-color: rgb(226, 0, 116);
+        color: #f2f2f2;
+        border-bottom: 1px solid black;
+      }
 
-        .column {
-            list-style-type: none;
-            padding: 0;
-            width: 20%;
-            float: left;
-            border: 1px solid black;
-            
-            border-collapse: collapse;
-            
+      th {
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
+        padding: 8px;
+      }
 
-            
-        }
+      td {
+        text-align: center;
+        padding: 8px;
+        word-wrap: break-word;
+        white-space: normal;
+      }
 
-        li {
-            text-align: center;
-            display: block;
-            height: 40px;
-            padding: 8px;
-            padding-top: 30px;
-            background-color: rgb(226, 0, 116);
-            color:#f2f2f2;
-            border-bottom: 1px solid black;
-            
-            
-        }
+      table {
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        padding: 12px 20px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        border: 1px solid #f2f2f2;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+        border-collapse: collapse;
+        table-layout: fixed;
+      }
 
-        th {
-            text-align: center;
-            font-weight: bold;
-            font-size: 20px;
-            padding: 8px;
-        }
+      form {
+        font-weight: bold;
+        color: black;
+      }
 
-        td {
-            
-            text-align: center;
-            padding: 8px;
-            word-wrap: break-word;
-            white-space: normal;
-        }
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 12px 20px;
+        margin-top: 8px;
+        margin-left: auto;
+        margin-right: auto;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
 
-        table {
-            text-align: center;
-            width: 100%;
-            max-width: 100%;
-            padding: 12px 20px;
-            border-radius: 4px;
-            box-sizing: border-box;
-            border: 1px solid  #f2f2f2;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 20px;
-            border-collapse: collapse;
-            table-layout: fixed;
-        }
+      input[type="button"] {
+        width: 100%;
+        background-color: rgb(226, 0, 116);
+        color: #f2f2f2;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
 
-        form {
-            font-weight: bold;
-            color: black;
-        }
-
-        input[type=text], select {
-            width: 100%;
-            padding: 12px 20px;
-            margin-top: 8px;
-            margin-left: auto;
-            margin-right: auto;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;  
-        }
-
-        input[type=button] {
-            width: 100%;
-            background-color: rgb(226, 0, 116);
-            color: #f2f2f2;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        input[type=button]:hover {
-            background-color: rgb(226, 0, 146);
-        }
-
+      input[type="button"]:hover {
+        background-color: rgb(226, 0, 146);
+      }
     </style>
+  </head>
 
-</head>
-
-<body>
-
-<!-- generate navigation bar -->
+  <body>
+    <!-- generate navigation bar -->
     <div class="navbar">
-        <div class = "leftnav">
-            <a href="/home.html">Home</a>
-            <a href="/youtubePlayer.html">Youtube Player</a>
-            <a href="/aboutme.html">aboutme</a>
-            <a href="/roomOccupancy.html">Rooms</a>
-        </div>
-        <div class="rightnav">
-            <a href="/template.html" id="logoutButton">Logout</a>
-        </div>
+      <div class="leftnav">
+        <a href="/home.html">Home</a>
+        <a href="/youtubePlayer.html">Youtube Player</a>
+        <a href="/aboutme.html">aboutme</a>
+        <a href="/roomOccupancy.html">Rooms</a>
+      </div>
+      <div class="rightnav">
+        <a href="/template.html" id="logoutButton">Logout</a>
+      </div>
     </div>
 
     <h1>List</h1>
 
-<!-- create content box -->
+    <!-- create content box -->
     <div class="paper">
-        <div>
-            <!-- create member list -->
-            <table id="dataTable" class="mytable1">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Alter</th>
-                        <th>Stadt</th>
-                    </tr>
-                </thead>
-                <tbody>
+      <div>
+        <!-- create member list -->
+        <table id="dataTable" class="mytable1">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Alter</th>
+              <th>Stadt</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <!-- create input form, calls fillTable() -->
+        <form>
+          <label for="Name">Name:</label><br />
+          <input type="text" id="Name" name="Name" /><br /><br />
 
-                </tbody>
-            </table>
-            <!-- create input form, calls fillTable() -->
-            <form>
-                <label for="Name">Name:</label><br>
-                <input type="text" id="Name" name="Name"><br><br>
-            
-                <label for="Alter">Alter:</label><br>
-                <input type="text" id="Alter" name="Alter"><br><br>
+          <label for="Alter">Alter:</label><br />
+          <input type="text" id="Alter" name="Alter" /><br /><br />
 
-                <label for="Stadt">Stadt:</label><br>
-                <input type="text" id="Stadt" name="Stadt"><br><br>
-            
-                <input type="button" value="Submit" onclick="fillTable()">
-            </form>
-        </div>
+          <label for="Stadt">Stadt:</label><br />
+          <input type="text" id="Stadt" name="Stadt" /><br /><br />
 
-        <!-- placeholder container to push html code into -->
-        <div id = "steckbrief" style="width: 80%;"></div>
+          <input type="button" value="Submit" onclick="fillTable()" />
+        </form>
+      </div>
 
-        <div>
-            <input type="button" value="Close" onclick="closeData()" class="hidden" id="closeButton">
-        </div>
-        
+      <!-- placeholder container to push html code into -->
+      <div id="steckbrief" style="width: 80%"></div>
+
+      <div>
+        <input
+          type="button"
+          value="Close"
+          onclick="closeData()"
+          class="hidden"
+          id="closeButton"
+        />
+      </div>
     </div>
-    
 
     <script src="/js/aboutme.js"></script>
     <script src="/js/template.js"></script>
-    <script src="/js/logout.js"></script> 
-</body>
+    <script src="/js/logout.js"></script>
+  </body>
 </html>

@@ -1,100 +1,97 @@
-
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    height: 100vh;
-    background-color: rgb(226, 0, 116); /* Set the desired background color */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  background-color: rgb(226, 0, 116); /* Set the desired background color */
 }
 
 h1 {
-    margin-top: 150px;
-    margin-bottom: 50px;
-    text-align: center;
-    font-size: 60px;
-    color: #f2f2f2;
-    padding: 20px;
+  margin-top: 150px;
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 60px;
+  color: #f2f2f2;
+  padding: 20px;
 }
 
 div {
-    width: 25%;
-    min-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
+  width: 25%;
+  min-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .paper {
-    margin-top: 50px;
-    min-width: none;
-    max-width: 1440px;
-    width: 75%;
-    box-shadow: 0 -4px 10px 0px gray;
+  margin-top: 50px;
+  min-width: none;
+  max-width: 1440px;
+  width: 75%;
+  box-shadow: 0 -4px 10px 0px gray;
 }
 
 .navbar {
-    overflow: hidden;
-    display: flex;
-    background-color: #f2f2f2;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    justify-content: space-between;
-    border-radius: 0px;
-    margin-top: 0px;
-    box-shadow: 0 -4px 10px 0px gray;
-    transition: padding 0.2s;
+  overflow: hidden;
+  display: flex;
+  background-color: #f2f2f2;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  justify-content: space-between;
+  border-radius: 0px;
+  margin-top: 0px;
+  box-shadow: 0 -4px 10px 0px gray;
+  transition: padding 0.2s;
 }
 
 .leftnav {
-    width: 500px;
-    margin: 0;
-    padding: 0;
+  width: 500px;
+  margin: 0;
+  padding: 0;
 }
 
 .rightnav {
-    width: 100px;
-    min-width: 0;
-    margin: 0;
-    padding: 0;
+  width: 100px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 .navbar a:hover {
-    color: rgb(226, 0, 116);
+  color: rgb(226, 0, 116);
 }
 
 @media screen and (max-width: 640px) {
-    .paper {
-        
-        width: 480px;
-        min-width: 320px;
-        border-radius: 5px;
-        box-shadow: 0 -4px 10px 0px gray;
-    }
+  .paper {
+    width: 480px;
+    min-width: 320px;
+    border-radius: 5px;
+    box-shadow: 0 -4px 10px 0px gray;
+  }
 }
 @media screen and (max-width: 540px) {
-    .paper {
-        
-        width: 95%;
-        min-width: 320px;
-        border-radius: 0px;
-        box-shadow: 0 0px 0px 0px gray;
-    }
+  .paper {
+    width: 95%;
+    min-width: 320px;
+    border-radius: 0px;
+    box-shadow: 0 0px 0px 0px gray;
+  }
 }
